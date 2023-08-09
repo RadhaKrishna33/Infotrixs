@@ -1,0 +1,71 @@
+<html>
+  <head>
+    <title>
+      Calculator
+    </title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <center>
+     <table>
+      <tr>
+        <td class="cls1" colspan="3" style="text-align: right;" id='result'>
+          <form name="form1">
+          <input type="text" size="50" name="result">
+        </td>
+        <td class="cls2"><input type="button" value="AC" class="btn" id="id1" onclick="form1.result.value =' '" /></td>
+      </tr>
+      <tr>
+        <td><input type="button" value="1" class="btn" onclick="form1.result.value +='1'"/></td>
+        <td><input type="button" value="2" class="btn" onclick="form1.result.value +='2'"/></td>
+        <td><input type="button" value="3" class="btn" onclick="form1.result.value +='3'"/></td>
+        <td><input type="button" value="C" class="btn" id="id1" onclick="form1.result.value =' '"/></td>
+      </tr>
+      <tr>
+        <td><input type="button" value="4" class="btn" onclick="form1.result.value +='4'" /></td>
+        <td><input type="button" value="5" class="btn" onclick="form1.result.value +='5'" /></td>
+        <td><input type="button" value="6" class="btn" onclick="form1.result.value +='6'"/></td>
+        <td><input type="button" value="+" id="id1" class="btn" onclick="form1.result.value +='+'"/></td>
+      </tr>
+      <tr>
+        <td><input type="button" value="7" class="btn" onclick="form1.result.value +='7'"/></td>
+        <td><input type="button" value="8" class="btn" onclick="form1.result.value +='8'"/></td>
+        <td><input type="button" value="9" class="btn" onclick="form1.result.value +='9'"/></td>
+        <td><input type="button" value="-" class="btn" id="id1" onclick="form1.result.value +='-'"/></td>
+      </tr>
+      <tr>
+        <td><input type="button" value="0" class="btn" onclick="form1.result.value +='0'"/></td>
+        <td  class="cls2"><input type="button" value="=" class="btn" id="id1" onclick="solve()"/></td>
+        <td class="cls2" ><input type="button" value="*" class="btn" id="id1" onclick="form1.result.value +='*'"/></td>
+        <td ><input type="button" value="/" class="btn" id="id1" onclick="form1.result.value +='/'"/></td>
+      </tr>
+     </table>
+     <br>
+    
+    </form>
+
+    <button id="myBtn" class="cls4">History</button>
+
+    <p id="demo"></p>
+    </center> 
+    <script>
+    let data;
+    let d=[];
+      function solve(){
+        v=form1.result.value
+        form1.result.value = eval(form1.result.value);
+        data=v +" = "+form1.result.value;
+        d.push(data);
+      }
+      const element = document.getElementById("myBtn");
+      element.addEventListener("click", myFunction);
+
+      function myFunction() {
+      document.getElementById("demo").innerHTML = d;
+      }
+    
+    </script>
+
+  </body>
+
+</html>
